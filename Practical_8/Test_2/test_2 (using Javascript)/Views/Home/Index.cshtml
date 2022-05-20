@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    
+</head>
+<body>
+    <div>
+        <label style="font-size:25px" id="string"></label>
+        <br />
+
+    </div>
+    <button type="button" onclick="printtext()">PRINT TEXT</button>&nbsp;
+    <button type="button" onclick="bold()">BOLD</button>&nbsp;
+    <button type="button" onclick="italic()">ITALIC</button>&nbsp;
+    <button type="button" onclick="underline()">UNDERLINE</button>&nbsp;
+    <button type="button" onclick="reset()">RESET</button>&nbsp;
+
+    <script>
+        function printtext() {
+            var element = document.getElementById("string").innerHTML="Hello World";
+        }
+        function bold() {
+            var element = document.getElementById("string").style.fontWeight="bold";
+
+        }
+        function italic() {
+            var element = document.getElementById("string").style.fontStyle = "italic";
+        }
+        function underline() {
+            var element = document.getElementById("string").style.textDecoration = 'underline';
+        }
+        function reset() {
+            var element = document.getElementById("string");
+            var value = document.getElementById("string").innerHTML;
+            var newelement = document.createElement("label");
+            newelement.setAttribute('id', 'string')
+            newelement.innerHTML = value;
+            element.parentNode.replaceChild(newelement, element);
+           document.getElementById("string").style.fontSize="25px";
+        }
+
+    </script>
+</body>
+</html>
